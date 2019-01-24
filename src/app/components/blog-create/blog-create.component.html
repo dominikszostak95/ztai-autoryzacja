@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-sm-3">
+    Example
+  </div>
+  <div class="col-sm-9">
+    <form [formGroup]="form">
+      <div class="form-group">
+        <label for="title">Tytuł:</label>
+        <input formControlName="title" type="text" class="form-control" id="title">
+        <div *ngIf="form.get('title').invalid && form.get('title').dirty">Nieprawidłowa treść!</div>
+      </div>
+      <div class="form-group">
+        <label for="photoUrl">Link do zdjęcia:</label>
+        <input formControlName="photoUrl" type="text" class="form-control" id="photoUrl">
+        <div *ngIf="form.get('photoUrl').invalid && form.get('photoUrl').dirty">Nieprawidłowe nazwisko!</div>
+      </div>
+      <div class="form-group">
+        <label for="content">Treść:</label>
+        <input formControlName="content" type="Text" class="form-control" id="content">
+        <div *ngIf="form.get('content').invalid && form.get('content').dirty">Nieprawidłowy treść!</div>
+      </div>
+      <button [disabled]="form.invalid" type="submit" class="btn btn-block btn-primary">Wyślij</button>
+    </form>
+  </div>
+</div>
+

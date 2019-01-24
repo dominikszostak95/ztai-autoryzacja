@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-sm-3">
+
+  </div>
+  <div class="col-sm-9">
+    <a routerLink="create" class="nav-link active">Dodaj nowy post</a>
+    <div *ngFor="let item of items | filter: filterText">
+      <app-blog-item [image]="item.url" [text]="item.title" [id]="item.id"></app-blog-item>
+      <br><br>
+    </div>
+  </div>
+</div>

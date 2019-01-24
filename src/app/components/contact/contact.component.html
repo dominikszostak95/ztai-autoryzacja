@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-sm-3">
+    Example
+  </div>
+  <div class="col-sm-9">
+      <form [formGroup]="form">
+        <div class="form-group">
+          <label for="name">Imię:</label>
+          <input formControlName="name" type="text" class="form-control" id="name">
+          <div *ngIf="form.get('name').invalid && form.get('name').dirty">Nieprawidłowe imie</div>
+        </div>
+        <div class="form-group">
+          <label for="surname">Nazwisko:</label>
+          <input formControlName="surname" type="text" class="form-control" id="surname">
+          <div *ngIf="form.get('surname').invalid && form.get('surname').dirty">Nieprawidłowe nazwisko</div>
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail:</label>
+          <input formControlName="email" type="email" class="form-control" id="email">
+          <div *ngIf="form.get('email').invalid && form.get('email').dirty">Nieprawidłowy email</div>
+        </div>
+        <div class="form-group">
+          <label for="gender">Płeć:</label>
+          <select id="gender" class="form-control">
+            <option>Mężczyzna</option>
+            <option>Kobieta</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="description">Wiadomość:</label>
+          <textarea formControlName="description" class="form-control" id="description" rows="3"></textarea>
+          <div *ngIf="form.get('description').invalid && form.get('description').dirty">Nieprawidłowa wiadomość</div>
+        </div>
+        <div class="form-group">
+          <label for="age">Wiek:</label>
+          <input formControlName="age" type="number" class="form-control" id="age" minvalue="0" maxvalue="120" value="18">
+          <div *ngIf="form.get('age').invalid && form.get('age').dirty">Nieprawidlowy wiek</div>
+        </div>
+        <div class="form-group">
+          <label for="maritalStatus">Stan cywilny:</label>
+          <select id="maritalStatus" class="form-control">
+            <option selected>Panna/Kawaler</option>
+            <option>Mężatka/Żonaty</option>
+            <option>Wdowa/Wdowiec</option>
+          </select>
+        </div>
+          <button type="reset" class="btn btn-block">Wyczyść</button>
+          <button [disabled]="form.invalid" type="submit" class="btn btn-block btn-primary">Wyślij</button>
+      </form>
+  </div>
+</div>
